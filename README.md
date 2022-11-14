@@ -1,5 +1,5 @@
 # reservation
-## HI, GUEST
+## HI, GUEST PROJECT
 guest house reservation
 
 ### back: node.js, AWS, mongoDB
