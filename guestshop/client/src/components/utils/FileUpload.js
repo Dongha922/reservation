@@ -95,6 +95,7 @@ function FileUpload(props) {
               style={{
                 maxWidth: "330px",
                 maxHeight: "220px",
+                objectFit: "fill",
               }}
               src={`http://localhost:5000/${image}`}
             />
