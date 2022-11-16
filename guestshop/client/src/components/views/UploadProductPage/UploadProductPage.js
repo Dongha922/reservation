@@ -67,7 +67,7 @@ function UploadProductPage(props) {
   return (
     <div style={{ maxWidth: "700px", margin: "2rem auto" }}>
       <div style={{ textAlign: "center", marginBottom: "2rem" }}>
-        <h2 level={2}>게하 상품 업로드</h2>
+        <h2 level={2}>게스트하우스 업로드</h2>
       </div>
       <Form onSubmit={submitHandler}>
         {/*드롭존*/}
