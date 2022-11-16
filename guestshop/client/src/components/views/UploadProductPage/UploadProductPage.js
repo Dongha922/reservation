@@ -53,7 +53,7 @@ function UploadProductPage(props) {
       Description: Description,
       price: Price,
       images: Images,
-      Continents: Continent,
+      continents: Continent,
     };
     Axios.post("/api/product", body).then((response) => {
       if (response.data.success) {
@@ -85,7 +85,7 @@ function UploadProductPage(props) {
         <TextArea onChange={descriptionChangeHandler} value={Description} />
         <br />
         <br />
-        <label> 가격 (\)</label>
+        <label> 가격 (원)</label>
         <Input type="number" onChange={priceChangeHandler} value={Price} />
 
         <br />
