@@ -13,7 +13,7 @@ function LandingPage() {
   const [Skip, setSkip] = useState(0);
   const [Limit, setLimit] = useState(8);
   const [PostSize, setPostSize] = useState(0);
-  const [Filters, setfilters] = useState({
+  const [Filters, setFilters] = useState({
     continents: [],
     print: [],
   });
@@ -49,6 +49,7 @@ function LandingPage() {
       skip: skip,
       limit: Limit,
       loadMore: true,
+      filters: Filters,
     };
 
     getProducts(body);
@@ -60,10 +61,16 @@ function LandingPage() {
 
     return (
       <Col lg={6} md={8} xs={24} key={index}>
-        <Card cover={<ImageSlider images={product.images} />}>
+        <Card
+          cover={
+            <a href={`/product/${product._id}`}>
+              <ImageSlider images={product.images} />
+            </a>
+          }
+        >
           <Meta
             title={product.title}
-            description={`${product.price.toLocaleString("ko-KR")} 원 `}
+            description={`${product.price.toLocaleString("ko-KR")}원 `}
           />
         </Card>
       </Col>
@@ -86,11 +93,11 @@ function LandingPage() {
     let array = [];
 
     for (let key in value) {
-      if (data[key]._id === parseInt(value)) {
+      if (data[key]._id === value._id) {
         array = data[key].array;
       }
-      return array;
     }
+    return array;
   };
   const handleFilters = (filters, category) => {
     const newFilters = { ...Filters };
@@ -104,6 +111,7 @@ function LandingPage() {
       newFilters[category] = priceValues;
     }
     showFilteredResults(newFilters);
+    setFilters(newFilters);
   };
 
   const updateSearchTerm = (newSearchTerm) => {
@@ -121,12 +129,6 @@ function LandingPage() {
 
   return (
     <div style={{ width: "75%", margin: "3rem auto" }}>
-      {/*<div style={{ textAlign: "center" }}>
-        <h2>
-          Let's Travel Anywhere <Icon type="rocket" />{" "}
-        </h2>
-      </div> */}
-
       {/* Filter */}
       <Row gutter={[16, 16]}>
         <Col lg={12} xs={24}>
