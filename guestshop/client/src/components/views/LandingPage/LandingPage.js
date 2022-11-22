@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Icon, Col, Row, Card } from "antd";
+import { Col, Row, Card } from "antd";
 import Meta from "antd/lib/card/Meta";
 import ImageSlider from "../../utils/ImageSlider";
 import CheckBox from "./Sections/CheckBox";
@@ -17,6 +17,7 @@ function LandingPage() {
     continents: [],
     print: [],
   });
+  const [Search, setSearchTerm] = useState("");
 
   useEffect(() => {
     let body = {
@@ -104,6 +105,20 @@ function LandingPage() {
     }
     showFilteredResults(newFilters);
   };
+
+  const updateSearchTerm = (newSearchTerm) => {
+    setSearchTerm(newSearchTerm);
+    let body = {
+      skip: 0,
+      limit: Limit,
+      filters: Filters,
+      searchTerm: newSearchTerm,
+    };
+    setSkip(0);
+    setSearchTerm(newSearchTerm);
+    getProducts(body);
+  };
+
   return (
     <div style={{ width: "75%", margin: "3rem auto" }}>
       {/*<div style={{ textAlign: "center" }}>
@@ -141,7 +156,7 @@ function LandingPage() {
           margin: "1rem auto",
         }}
       >
-        <SearchFeatures />
+        <SearchFeatures refreshFunction={updateSearchTerm} />
       </div>
 
       {/* Cards 
