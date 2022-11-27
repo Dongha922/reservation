@@ -63,7 +63,7 @@ function LandingPage() {
       <Col lg={6} md={8} xs={24} key={index}>
         <Card
           cover={
-            <a href={`/product/${product._id}`}>
+            <a href="https://map.naver.com/v5/entry/place/37398074?c=14129371.2238615,4517168.8894636,15,0,0,0,dh">
               <ImageSlider images={product.images} />
             </a>
           }
