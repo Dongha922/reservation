@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import ImageGallery from "react-image-gallery";
-
 function ProductImage(props) {
   const [Images, setImages] = useState([]);
 
@@ -18,11 +17,7 @@ function ProductImage(props) {
     }
   }, [props.detail]);
 
-  return (
-    <div>
-      <ImageGallery items={Images} />
-    </div>
-  );
+  return <div>productImage</div>;
 }
 
 export default ProductImage;
