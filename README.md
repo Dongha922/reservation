@@ -13,6 +13,8 @@ mongoDB에서 모든 ip허용함 차후 수정
 
 root 폴더에서 npm i , npm install bcrypt --save client 폴더에서 npm i , npm run dev 로 실행 
 ![image](https://user-images.githubusercontent.com/79620776/204211071-55f4098f-810a-48eb-bda7-009425c7a057.png)
+![image](https://user-images.githubusercontent.com/79620776/204212834-75d438b5-8063-4085-b4a2-293e7590820c.png)
+
 ![image](https://user-images.githubusercontent.com/79620776/204212287-fa9a521d-8590-4b85-8c77-5c4e9b81537e.png)
 ![image](https://user-images.githubusercontent.com/79620776/204212564-eb5e4a93-20e8-4333-888c-0a89ba95c514.png)
 
